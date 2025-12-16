@@ -231,7 +231,7 @@ export default function Pricing() {
                   <button
                     className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg transform hover:scale-105'
+                        ? 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                     }`}
                   >

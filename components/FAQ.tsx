@@ -114,12 +114,12 @@ export default function FAQ() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">Still have questions?</p>
             <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">
               Contact Support
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

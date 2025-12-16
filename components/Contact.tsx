@@ -1,0 +1,216 @@
+'use client'
+
+import { useEffect } from 'react'
+import Script from 'next/script'
+
+export default function Contact() {
+  useEffect(() => {
+    const timestamp = () => {
+      const response = document.getElementById('g-recaptcha-response') as HTMLInputElement | null
+      if (response == null || response.value.trim() === '') {
+        const captchaSettings = document.getElementsByName('captcha_settings')[0] as HTMLInputElement
+        if (captchaSettings) {
+          const elems = JSON.parse(captchaSettings.value)
+          elems['ts'] = JSON.stringify(new Date().getTime())
+          captchaSettings.value = JSON.stringify(elems)
+        }
+      }
+    }
+
+    const interval = setInterval(timestamp, 500)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <>
+      <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
+
+      <section className="py-20 bg-white" id="contact">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Left side - Contact Info */}
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  Get in Touch
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">
+                  Have questions about Accez? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Email</h3>
+                      <p className="text-gray-600">support@accez.cloud</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Office</h3>
+                      <p className="text-gray-600">Contact us for location details</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Business Hours</h3>
+                      <p className="text-gray-600">Monday - Friday: 9am - 6pm</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - Salesforce Web-to-Lead Form */}
+              <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                <form
+                  action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D41000002kA0p"
+                  method="POST"
+                >
+                  {/* Hidden Salesforce Fields */}
+                  <input
+                    type="hidden"
+                    name="captcha_settings"
+                    value='{"keyname":"AccezV2","fallback":"true","orgId":"00D41000002kA0p","ts":""}'
+                  />
+                  <input type="hidden" name="oid" value="00D41000002kA0p" />
+                  <input type="hidden" name="retURL" value="https://accez.cloud/thankyou" />
+                  <input type="hidden" name="recordType" id="recordType" value="012Pm000004jdap" />
+                  <input type="hidden" name="lead_source" value="Web" />
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label htmlFor="first_name" className="block text-sm font-medium text-gray-700 mb-2">
+                        First Name
+                      </label>
+                      <input
+                        id="first_name"
+                        maxLength={40}
+                        name="first_name"
+                        type="text"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="last_name" className="block text-sm font-medium text-gray-700 mb-2">
+                        Last Name
+                      </label>
+                      <input
+                        id="last_name"
+                        maxLength={80}
+                        name="last_name"
+                        type="text"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        placeholder="Doe"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      maxLength={80}
+                      name="email"
+                      type="email"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Company
+                    </label>
+                    <input
+                      id="company"
+                      maxLength={40}
+                      name="company"
+                      type="text"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                      placeholder="Your Company"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-2">
+                        Mobile
+                      </label>
+                      <input
+                        id="mobile"
+                        maxLength={40}
+                        name="mobile"
+                        type="tel"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        placeholder="+1 234 567 8900"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                        City
+                      </label>
+                      <input
+                        id="city"
+                        maxLength={40}
+                        name="city"
+                        type="text"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        placeholder="New York"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <label htmlFor="Description" className="block text-sm font-medium text-gray-700 mb-2">
+                      Comments
+                    </label>
+                    <textarea
+                      id="Description"
+                      maxLength={3000}
+                      name="Description"
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none resize-vertical"
+                      placeholder="Tell us how we can help..."
+                    />
+                  </div>
+
+                  {/* reCAPTCHA */}
+                  <div className="g-recaptcha mb-6" data-sitekey="6LdtnJAqAAAAAJe1H98R4i-d0Ge3hiGZUTWS3btY"></div>
+
+                  <button
+                    type="submit"
+                    name="submit"
+                    className="w-full py-4 px-6 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-200 hover:shadow-lg"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
