@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Cairo } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@/components/Analytics'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const cairo = Cairo({ subsets: ['arabic'], variable: '--font-cairo' })
 
 export const metadata: Metadata = {
   title: 'Accez.cloud - Smart Property Management SaaS Platform',
@@ -24,12 +26,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Analytics />
       </head>
-      <body className={inter.className}>
-        {children}
+      <body className={`${inter.variable} ${cairo.variable} font-sans`}>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )

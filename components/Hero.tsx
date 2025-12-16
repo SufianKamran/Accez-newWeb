@@ -1,13 +1,48 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
+  const { language } = useLanguage()
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  const content = {
+    en: {
+      badge: 'Smart Property Management SaaS',
+      title1: 'Enhance Property Management',
+      title2: 'Through Smart SaaS Solutions',
+      subtitle: 'Unified platform for booking management, rent collection, maintenance scheduling, and marketplace services',
+      startTrial: 'Start Free Trial',
+      watchDemo: 'Watch Demo',
+      stat1: '400+',
+      stat1Label: 'Integrated Channels',
+      stat2: '30%',
+      stat2Label: 'Revenue Increase',
+      stat3: '24/7',
+      stat3Label: 'Automated Operations',
+    },
+    ar: {
+      badge: 'منصة SaaS ذكية لإدارة العقارات',
+      title1: 'تعزيز إدارة العقارات',
+      title2: 'من خلال حلول SaaS الذكية',
+      subtitle: 'منصة موحدة لإدارة الحجوزات وتحصيل الإيجارات وجدولة الصيانة وخدمات السوق',
+      startTrial: 'ابدأ التجربة المجانية',
+      watchDemo: 'شاهد العرض التوضيحي',
+      stat1: '+400',
+      stat1Label: 'قناة متكاملة',
+      stat2: '30%',
+      stat2Label: 'زيادة في الإيرادات',
+      stat3: '24/7',
+      stat3Label: 'عمليات آلية',
+    },
+  }
+
+  const t = content[language]
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen flex items-center">
@@ -27,7 +62,7 @@ export default function Hero() {
             }`}
           >
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-            Smart Property Management SaaS
+            {t.badge}
           </div>
 
           {/* Main heading */}
@@ -36,9 +71,9 @@ export default function Hero() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Enhance Property Management
+            {t.title1}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              Through Smart SaaS Solutions
+              {t.title2}
             </span>
           </h1>
 
@@ -48,7 +83,7 @@ export default function Hero() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Unified platform for booking management, rent collection, maintenance scheduling, and marketplace services
+            {t.subtitle}
           </p>
 
           {/* CTA Buttons */}
@@ -58,10 +93,10 @@ export default function Hero() {
             }`}
           >
             <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
-              Start Free Trial
+              {t.startTrial}
             </button>
             <button className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 border border-gray-200">
-              Watch Demo
+              {t.watchDemo}
             </button>
           </div>
 
@@ -72,16 +107,16 @@ export default function Hero() {
             }`}
           >
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <div className="text-4xl font-bold text-blue-600 mb-2">400+</div>
-              <div className="text-gray-600">Integrated Channels</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{t.stat1}</div>
+              <div className="text-gray-600">{t.stat1Label}</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <div className="text-4xl font-bold text-purple-600 mb-2">30%</div>
-              <div className="text-gray-600">Revenue Increase</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">{t.stat2}</div>
+              <div className="text-gray-600">{t.stat2Label}</div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <div className="text-4xl font-bold text-pink-600 mb-2">24/7</div>
-              <div className="text-gray-600">Automated Operations</div>
+              <div className="text-4xl font-bold text-pink-600 mb-2">{t.stat3}</div>
+              <div className="text-gray-600">{t.stat3Label}</div>
             </div>
           </div>
         </div>

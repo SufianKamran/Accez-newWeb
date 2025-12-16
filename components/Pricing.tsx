@@ -1,104 +1,120 @@
 'use client'
 
 import { useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface Feature {
-  text: string
+  textKey: string
   highlight: boolean
-  suffix?: string
+  suffixKey?: string
 }
 
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false)
+  const { t } = useLanguage()
 
   const plans = [
     {
-      name: 'Basic',
+      nameKey: 'basic',
       icon: 'check',
       monthly: {
         price: 10,
         originalPrice: 20,
-        period: '/month',
-        billingNote: 'Billed monthly',
+        periodKey: '/month',
+        billingNoteKey: 'billedMonthly',
       },
       yearly: {
         price: 120,
         originalPrice: 240,
-        period: '/year',
-        billingNote: 'Billed annually (save 50%)',
+        periodKey: '/year',
+        billingNoteKey: 'billedAnnually',
       },
-      discount: '50% OFF Launch Discount',
+      discountKey: 'launchDiscount',
       features: [
-        { text: '3 Properties', highlight: true, suffix: ' (5 units each)' },
-        { text: 'Property Management', highlight: false, suffix: '' },
-        { text: 'Work Orders Management', highlight: false, suffix: '' },
-        { text: 'Move-In/Out Tracking', highlight: false, suffix: '' },
-        { text: 'Announcements', highlight: false, suffix: '' },
-        { text: 'Document Library', highlight: false, suffix: '' },
-        { text: 'Tenant Perks', highlight: false, suffix: '' },
-        { text: 'Community News Feed', highlight: false, suffix: '' },
+        { textKey: 'properties3', highlight: true, suffixKey: 'unitsEach' },
+        { textKey: 'propertyManagement', highlight: false },
+        { textKey: 'workOrdersManagement', highlight: false },
+        { textKey: 'moveInOutTracking', highlight: false },
+        { textKey: 'announcements', highlight: false },
+        { textKey: 'documentLibrary', highlight: false },
+        { textKey: 'tenantPerks', highlight: false },
+        { textKey: 'communityNewsFeed', highlight: false },
       ] as Feature[],
       popular: false,
-      current: false,
     },
     {
-      name: 'Professional',
+      nameKey: 'professional',
       icon: 'star',
       monthly: {
         price: 40,
         originalPrice: 80,
-        period: '/month',
-        billingNote: 'Billed monthly',
+        periodKey: '/month',
+        billingNoteKey: 'billedMonthly',
       },
       yearly: {
         price: 480,
         originalPrice: 960,
-        period: '/year',
-        billingNote: 'Billed annually (save 50%)',
+        periodKey: '/year',
+        billingNoteKey: 'billedAnnually',
       },
-      discount: '50% OFF Launch Discount',
+      discountKey: 'launchDiscount',
       features: [
-        { text: 'Everything in Basic', highlight: false, suffix: '' },
-        { text: '6 Properties', highlight: true, suffix: ' (5 units each)' },
-        { text: 'Integrated Communications', highlight: false, suffix: '' },
-        { text: 'Amenities Booking', highlight: false, suffix: '' },
-        { text: 'Services Management', highlight: false, suffix: '' },
-        { text: 'Auto Calendar Sync (iCal)', highlight: false, suffix: '' },
-        { text: 'Property Owner Portal', highlight: false, suffix: '' },
+        { textKey: 'everythingInBasic', highlight: false },
+        { textKey: 'properties6', highlight: true, suffixKey: 'unitsEach' },
+        { textKey: 'integratedCommunications', highlight: false },
+        { textKey: 'amenitiesBooking', highlight: false },
+        { textKey: 'servicesManagement', highlight: false },
+        { textKey: 'autoCalendarSync', highlight: false },
+        { textKey: 'propertyOwnerPortal', highlight: false },
       ] as Feature[],
       popular: true,
-      current: false,
     },
     {
-      name: 'Enterprise',
+      nameKey: 'enterprise',
       icon: 'building',
       monthly: {
         price: 'Custom',
         originalPrice: null,
-        period: '',
-        billingNote: 'Tailored to your needs',
+        periodKey: '',
+        billingNoteKey: 'tailored',
       },
       yearly: {
         price: 'Custom',
         originalPrice: null,
-        period: '',
-        billingNote: 'Tailored to your needs',
+        periodKey: '',
+        billingNoteKey: 'tailored',
       },
-      discount: null,
+      discountKey: null,
       features: [
-        { text: 'Everything in Professional', highlight: false, suffix: '' },
-        { text: 'Custom Branded Domain', highlight: false, suffix: '' },
-        { text: 'White-label Mobile App', highlight: false, suffix: '' },
-        { text: 'Dedicated Account Manager', highlight: false, suffix: '' },
-        { text: 'Priority 24/7 Support', highlight: false, suffix: '' },
-        { text: 'API Access', highlight: false, suffix: '' },
-        { text: 'Custom Development', highlight: false, suffix: '' },
-        { text: 'Bulk Data Import', highlight: false, suffix: '' },
+        { textKey: 'everythingInProfessional', highlight: false },
+        { textKey: 'customBrandedDomain', highlight: false },
+        { textKey: 'whiteLabelMobileApp', highlight: false },
+        { textKey: 'dedicatedAccountManager', highlight: false },
+        { textKey: 'priority247Support', highlight: false },
+        { textKey: 'apiAccess', highlight: false },
+        { textKey: 'customDevelopment', highlight: false },
+        { textKey: 'bulkDataImport', highlight: false },
       ] as Feature[],
       popular: false,
-      current: false,
     },
   ]
+
+  const getPlanName = (key: string) => {
+    const names: Record<string, string> = {
+      basic: t.pricing.basic,
+      professional: t.pricing.professional,
+      enterprise: t.pricing.enterprise,
+    }
+    return names[key] || key
+  }
+
+  const getFeatureText = (key: string) => {
+    return (t.pricing as Record<string, string>)[key] || key
+  }
+
+  const getBillingNote = (key: string) => {
+    return (t.pricing as Record<string, string>)[key] || key
+  }
 
   const PlanIcon = ({ type }: { type: string }) => {
     switch (type) {
@@ -136,10 +152,10 @@ export default function Pricing() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Flexible Pricing for Every Portfolio Size
+            {t.pricing.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Start Your Free 14-Day Trial
+            {t.pricing.subtitle}
           </p>
 
           {/* Monthly/Yearly Toggle */}
@@ -152,7 +168,7 @@ export default function Pricing() {
                   : 'text-gray-400 hover:text-white'
               }`}
             >
-              Monthly
+              {t.pricing.monthly}
             </button>
             <button
               onClick={() => setIsYearly(true)}
@@ -162,9 +178,9 @@ export default function Pricing() {
                   : 'text-gray-400 hover:text-white'
               }`}
             >
-              Yearly
+              {t.pricing.yearly}
               <span className="bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
-                Save 17%
+                {t.pricing.save}
               </span>
             </button>
           </div>
@@ -185,7 +201,7 @@ export default function Pricing() {
                 {/* Popular/Current Badge */}
                 {plan.popular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-4 py-1 text-xs font-bold rounded-b-lg">
-                    {isYearly ? 'POPULAR' : 'CURRENT'}
+                    {isYearly ? t.pricing.popular : t.pricing.current}
                   </div>
                 )}
 
@@ -195,7 +211,7 @@ export default function Pricing() {
 
                   {/* Plan Name */}
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    {plan.name}
+                    {getPlanName(plan.nameKey)}
                   </h3>
 
                   {/* Pricing */}
@@ -210,21 +226,21 @@ export default function Pricing() {
                         {isCustom ? '' : '$'}{pricing.price}
                       </span>
                       {!isCustom && (
-                        <span className="text-gray-500 ml-1">{pricing.period}</span>
+                        <span className="text-gray-500 ml-1">{pricing.periodKey}</span>
                       )}
                     </div>
                   </div>
 
                   {/* Discount Badge */}
-                  {plan.discount && (
+                  {plan.discountKey && (
                     <div className="text-emerald-600 text-sm font-semibold mb-1">
-                      {plan.discount}
+                      {t.pricing.launchDiscount}
                     </div>
                   )}
 
                   {/* Billing Note */}
                   <div className="text-gray-500 text-sm mb-6">
-                    {pricing.billingNote}
+                    {getBillingNote(pricing.billingNoteKey)}
                   </div>
 
                   {/* CTA Button */}
@@ -235,7 +251,7 @@ export default function Pricing() {
                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                     }`}
                   >
-                    {isCustom ? 'Contact Sales' : 'Start Free Trial'}
+                    {isCustom ? t.pricing.contactSales : t.pricing.startFreeTrial}
                   </button>
 
                   {/* Features */}
@@ -258,11 +274,11 @@ export default function Pricing() {
                         <span className="text-gray-700">
                           {feature.highlight ? (
                             <>
-                              <strong>{feature.text}</strong>
-                              {feature.suffix && <span>{feature.suffix}</span>}
+                              <strong>{getFeatureText(feature.textKey)}</strong>
+                              {feature.suffixKey && <span> {getFeatureText(feature.suffixKey)}</span>}
                             </>
                           ) : (
-                            feature.text
+                            getFeatureText(feature.textKey)
                           )}
                         </span>
                       </div>
@@ -276,7 +292,7 @@ export default function Pricing() {
 
         <div className="text-center mt-12">
           <p className="text-gray-600">
-            All plans include a 14-day free trial. Cancel anytime.
+            {t.pricing.trialNote}
           </p>
         </div>
       </div>

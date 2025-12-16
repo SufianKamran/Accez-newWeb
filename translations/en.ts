@@ -1,0 +1,142 @@
+export const en = {
+  // Header
+  header: {
+    features: 'Features',
+    pricing: 'Pricing',
+    faq: 'FAQ',
+    contact: 'Contact',
+    startFreeTrial: 'Start Free Trial',
+  },
+
+  // Hero
+  hero: {
+    title: 'Modern Property Management Made Simple',
+    subtitle: 'Streamline your property operations with our all-in-one platform. Manage tenants, maintenance, payments, and more.',
+    startFreeTrial: 'Start Free Trial',
+    watchDemo: 'Watch Demo',
+    trustedBy: 'Trusted by property managers worldwide',
+  },
+
+  // Features
+  features: {
+    title: 'Everything You Need to Manage Properties',
+    subtitle: 'Powerful features designed for modern property management',
+    propertyManagement: 'Property Management',
+    propertyManagementDesc: 'Manage all your properties from a single dashboard with comprehensive tools.',
+    workOrders: 'Work Orders Management',
+    workOrdersDesc: 'Track and manage maintenance requests efficiently from submission to completion.',
+    moveInOut: 'Move-In/Out Tracking',
+    moveInOutDesc: 'Streamline tenant transitions with digital checklists and documentation.',
+    announcements: 'Announcements',
+    announcementsDesc: 'Keep tenants informed with targeted announcements and notifications.',
+    documentLibrary: 'Document Library',
+    documentLibraryDesc: 'Store and organize all property documents in one secure location.',
+    tenantPerks: 'Tenant Perks',
+    tenantPerksDesc: 'Offer exclusive deals and perks to enhance tenant satisfaction.',
+    communityFeed: 'Community News Feed',
+    communityFeedDesc: 'Build community with a social feed for property updates and events.',
+    integratedComms: 'Integrated Communications',
+    integratedCommsDesc: 'Centralize all tenant communications in one place.',
+  },
+
+  // Pricing
+  pricing: {
+    title: 'Flexible Pricing for Every Portfolio Size',
+    subtitle: 'Start Your Free 14-Day Trial',
+    monthly: 'Monthly',
+    yearly: 'Yearly',
+    save: 'Save 17%',
+    popular: 'POPULAR',
+    current: 'CURRENT',
+    billedMonthly: 'Billed monthly',
+    billedAnnually: 'Billed annually (save 50%)',
+    launchDiscount: '50% OFF Launch Discount',
+    startFreeTrial: 'Start Free Trial',
+    contactSales: 'Contact Sales',
+    trialNote: 'All plans include a 14-day free trial. Cancel anytime.',
+    tailored: 'Tailored to your needs',
+    // Plan names
+    basic: 'Basic',
+    professional: 'Professional',
+    enterprise: 'Enterprise',
+    // Features
+    properties3: '3 Properties',
+    properties6: '6 Properties',
+    unitsEach: '(5 units each)',
+    propertyManagement: 'Property Management',
+    workOrdersManagement: 'Work Orders Management',
+    moveInOutTracking: 'Move-In/Out Tracking',
+    announcements: 'Announcements',
+    documentLibrary: 'Document Library',
+    tenantPerks: 'Tenant Perks',
+    communityNewsFeed: 'Community News Feed',
+    everythingInBasic: 'Everything in Basic',
+    everythingInProfessional: 'Everything in Professional',
+    integratedCommunications: 'Integrated Communications',
+    amenitiesBooking: 'Amenities Booking',
+    servicesManagement: 'Services Management',
+    autoCalendarSync: 'Auto Calendar Sync (iCal)',
+    propertyOwnerPortal: 'Property Owner Portal',
+    customBrandedDomain: 'Custom Branded Domain',
+    whiteLabelMobileApp: 'White-label Mobile App',
+    dedicatedAccountManager: 'Dedicated Account Manager',
+    priority247Support: 'Priority 24/7 Support',
+    apiAccess: 'API Access',
+    customDevelopment: 'Custom Development',
+    bulkDataImport: 'Bulk Data Import',
+  },
+
+  // FAQ
+  faq: {
+    title: 'Frequently Asked Questions',
+    subtitle: 'Find answers to common questions about Accez',
+  },
+
+  // Contact
+  contact: {
+    title: 'Get in Touch',
+    subtitle: "Have questions about Accez? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    email: 'Email',
+    office: 'Office',
+    officeDetails: 'Contact us for location details',
+    businessHours: 'Business Hours',
+    businessHoursDetails: 'Monday - Friday: 9am - 6pm',
+    firstName: 'First Name',
+    lastName: 'Last Name',
+    emailLabel: 'Email',
+    company: 'Company',
+    mobile: 'Mobile',
+    city: 'City',
+    comments: 'Comments',
+    commentsPlaceholder: 'Tell us how we can help...',
+    sendMessage: 'Send Message',
+  },
+
+  // CTA
+  cta: {
+    title: 'Ready to Transform Your Property Management?',
+    subtitle: 'Join property managers worldwide who are streamlining operations and increasing revenue',
+    startFreeTrial: 'Start Free Trial',
+    scheduleDemo: 'Schedule a Demo',
+    trialNote: 'No credit card required • 14-day free trial • Cancel anytime',
+  },
+
+  // Footer
+  footer: {
+    description: 'Modern property management platform for the digital age.',
+    product: 'Product',
+    features: 'Features',
+    pricing: 'Pricing',
+    integrations: 'Integrations',
+    company: 'Company',
+    about: 'About',
+    careers: 'Careers',
+    blog: 'Blog',
+    support: 'Support',
+    helpCenter: 'Help Center',
+    contact: 'Contact',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Service',
+    allRightsReserved: 'All rights reserved.',
+  },
+}

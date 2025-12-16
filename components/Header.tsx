@@ -2,15 +2,17 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
 
   const navItems = [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { name: t.header.features, href: '#features' },
+    { name: t.header.pricing, href: '#pricing' },
+    { name: t.header.faq, href: '#faq' },
+    { name: t.header.contact, href: '#contact' },
   ]
 
   return (
@@ -35,13 +37,21 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Right side - Language Toggle & CTA */}
           <div className="hidden md:flex items-center gap-4">
+            {/* Language Switcher */}
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+              className="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200"
+            >
+              {language === 'en' ? 'العربية' : 'English'}
+            </button>
+
             <Link
               href="#pricing"
               className="px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200"
             >
-              Start Free Trial
+              {t.header.startFreeTrial}
             </Link>
           </div>
 
@@ -76,12 +86,24 @@ export default function Header() {
                   {item.name}
                 </a>
               ))}
+
+              {/* Language Switcher - Mobile */}
+              <button
+                onClick={() => {
+                  setLanguage(language === 'en' ? 'ar' : 'en')
+                  setIsMobileMenuOpen(false)
+                }}
+                className="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200 text-left"
+              >
+                {language === 'en' ? 'العربية' : 'English'}
+              </button>
+
               <Link
                 href="#pricing"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 text-center mt-2"
               >
-                Start Free Trial
+                {t.header.startFreeTrial}
               </Link>
             </nav>
           </div>

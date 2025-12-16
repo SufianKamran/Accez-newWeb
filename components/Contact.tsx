@@ -2,8 +2,11 @@
 
 import { useEffect } from 'react'
 import Script from 'next/script'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLanguage()
+
   useEffect(() => {
     const timestamp = () => {
       const response = document.getElementById('g-recaptcha-response') as HTMLInputElement | null
@@ -32,10 +35,10 @@ export default function Contact() {
               {/* Left side - Contact Info */}
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                  Get in Touch
+                  {t.contact.title}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8">
-                  Have questions about Accez? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+                  {t.contact.subtitle}
                 </p>
 
                 <div className="space-y-6">
@@ -46,7 +49,7 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Email</h3>
+                      <h3 className="font-semibold text-gray-900">{t.contact.email}</h3>
                       <p className="text-gray-600">support@accez.cloud</p>
                     </div>
                   </div>
@@ -59,8 +62,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Office</h3>
-                      <p className="text-gray-600">Contact us for location details</p>
+                      <h3 className="font-semibold text-gray-900">{t.contact.office}</h3>
+                      <p className="text-gray-600">{t.contact.officeDetails}</p>
                     </div>
                   </div>
 
@@ -71,8 +74,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Business Hours</h3>
-                      <p className="text-gray-600">Monday - Friday: 9am - 6pm</p>
+                      <h3 className="font-semibold text-gray-900">{t.contact.businessHours}</h3>
+                      <p className="text-gray-600">{t.contact.businessHoursDetails}</p>
                     </div>
                   </div>
                 </div>
@@ -98,7 +101,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label htmlFor="first_name" className="block text-sm font-medium text-gray-700 mb-2">
-                        First Name
+                        {t.contact.firstName}
                       </label>
                       <input
                         id="first_name"
@@ -111,7 +114,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label htmlFor="last_name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Last Name
+                        {t.contact.lastName}
                       </label>
                       <input
                         id="last_name"
@@ -126,7 +129,7 @@ export default function Contact() {
 
                   <div className="mb-4">
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email
+                      {t.contact.emailLabel}
                     </label>
                     <input
                       id="email"
@@ -140,7 +143,7 @@ export default function Contact() {
 
                   <div className="mb-4">
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                      Company
+                      {t.contact.company}
                     </label>
                     <input
                       id="company"
@@ -155,7 +158,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-2">
-                        Mobile
+                        {t.contact.mobile}
                       </label>
                       <input
                         id="mobile"
@@ -168,7 +171,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
-                        City
+                        {t.contact.city}
                       </label>
                       <input
                         id="city"
@@ -183,7 +186,7 @@ export default function Contact() {
 
                   <div className="mb-6">
                     <label htmlFor="Description" className="block text-sm font-medium text-gray-700 mb-2">
-                      Comments
+                      {t.contact.comments}
                     </label>
                     <textarea
                       id="Description"
@@ -191,7 +194,7 @@ export default function Contact() {
                       name="Description"
                       rows={4}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none resize-vertical"
-                      placeholder="Tell us how we can help..."
+                      placeholder={t.contact.commentsPlaceholder}
                     />
                   </div>
 
@@ -203,7 +206,7 @@ export default function Contact() {
                     name="submit"
                     className="w-full py-4 px-6 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-200 hover:shadow-lg"
                   >
-                    Send Message
+                    {t.contact.sendMessage}
                   </button>
                 </form>
               </div>

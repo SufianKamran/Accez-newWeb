@@ -1,0 +1,142 @@
+export const ar = {
+  // Header
+  header: {
+    features: 'المميزات',
+    pricing: 'الأسعار',
+    faq: 'الأسئلة الشائعة',
+    contact: 'اتصل بنا',
+    startFreeTrial: 'ابدأ التجربة المجانية',
+  },
+
+  // Hero
+  hero: {
+    title: 'إدارة العقارات الحديثة بكل سهولة',
+    subtitle: 'قم بتبسيط عمليات العقارات الخاصة بك مع منصتنا الشاملة. إدارة المستأجرين والصيانة والمدفوعات والمزيد.',
+    startFreeTrial: 'ابدأ التجربة المجانية',
+    watchDemo: 'شاهد العرض التوضيحي',
+    trustedBy: 'موثوق به من قبل مديري العقارات حول العالم',
+  },
+
+  // Features
+  features: {
+    title: 'كل ما تحتاجه لإدارة العقارات',
+    subtitle: 'ميزات قوية مصممة لإدارة العقارات الحديثة',
+    propertyManagement: 'إدارة العقارات',
+    propertyManagementDesc: 'إدارة جميع عقاراتك من لوحة تحكم واحدة مع أدوات شاملة.',
+    workOrders: 'إدارة أوامر العمل',
+    workOrdersDesc: 'تتبع وإدارة طلبات الصيانة بكفاءة من التقديم حتى الإنجاز.',
+    moveInOut: 'تتبع الانتقال',
+    moveInOutDesc: 'تبسيط انتقالات المستأجرين مع قوائم تحقق ووثائق رقمية.',
+    announcements: 'الإعلانات',
+    announcementsDesc: 'أبقِ المستأجرين على اطلاع بالإعلانات والإشعارات المستهدفة.',
+    documentLibrary: 'مكتبة المستندات',
+    documentLibraryDesc: 'تخزين وتنظيم جميع مستندات العقارات في مكان آمن واحد.',
+    tenantPerks: 'امتيازات المستأجرين',
+    tenantPerksDesc: 'تقديم عروض حصرية وامتيازات لتعزيز رضا المستأجرين.',
+    communityFeed: 'موجز أخبار المجتمع',
+    communityFeedDesc: 'بناء مجتمع مع موجز اجتماعي لتحديثات وفعاليات العقار.',
+    integratedComms: 'الاتصالات المتكاملة',
+    integratedCommsDesc: 'مركزة جميع اتصالات المستأجرين في مكان واحد.',
+  },
+
+  // Pricing
+  pricing: {
+    title: 'أسعار مرنة لكل حجم محفظة',
+    subtitle: 'ابدأ تجربتك المجانية لمدة 14 يومًا',
+    monthly: 'شهري',
+    yearly: 'سنوي',
+    save: 'وفر 17%',
+    popular: 'الأكثر شعبية',
+    current: 'الحالي',
+    billedMonthly: 'يُفوتر شهريًا',
+    billedAnnually: 'يُفوتر سنويًا (وفر 50%)',
+    launchDiscount: 'خصم إطلاق 50%',
+    startFreeTrial: 'ابدأ التجربة المجانية',
+    contactSales: 'تواصل مع المبيعات',
+    trialNote: 'جميع الخطط تتضمن تجربة مجانية لمدة 14 يومًا. يمكنك الإلغاء في أي وقت.',
+    tailored: 'مصمم حسب احتياجاتك',
+    // Plan names
+    basic: 'الأساسية',
+    professional: 'الاحترافية',
+    enterprise: 'المؤسسات',
+    // Features
+    properties3: '3 عقارات',
+    properties6: '6 عقارات',
+    unitsEach: '(5 وحدات لكل عقار)',
+    propertyManagement: 'إدارة العقارات',
+    workOrdersManagement: 'إدارة أوامر العمل',
+    moveInOutTracking: 'تتبع الانتقال',
+    announcements: 'الإعلانات',
+    documentLibrary: 'مكتبة المستندات',
+    tenantPerks: 'امتيازات المستأجرين',
+    communityNewsFeed: 'موجز أخبار المجتمع',
+    everythingInBasic: 'كل شيء في الأساسية',
+    everythingInProfessional: 'كل شيء في الاحترافية',
+    integratedCommunications: 'الاتصالات المتكاملة',
+    amenitiesBooking: 'حجز المرافق',
+    servicesManagement: 'إدارة الخدمات',
+    autoCalendarSync: 'مزامنة التقويم التلقائية (iCal)',
+    propertyOwnerPortal: 'بوابة مالك العقار',
+    customBrandedDomain: 'نطاق مخصص بعلامتك التجارية',
+    whiteLabelMobileApp: 'تطبيق جوال بعلامتك التجارية',
+    dedicatedAccountManager: 'مدير حساب مخصص',
+    priority247Support: 'دعم على مدار الساعة',
+    apiAccess: 'الوصول إلى API',
+    customDevelopment: 'تطوير مخصص',
+    bulkDataImport: 'استيراد البيانات بالجملة',
+  },
+
+  // FAQ
+  faq: {
+    title: 'الأسئلة الشائعة',
+    subtitle: 'اعثر على إجابات للأسئلة الشائعة حول Accez',
+  },
+
+  // Contact
+  contact: {
+    title: 'تواصل معنا',
+    subtitle: 'هل لديك أسئلة حول Accez؟ يسعدنا سماعك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.',
+    email: 'البريد الإلكتروني',
+    office: 'المكتب',
+    officeDetails: 'تواصل معنا للحصول على تفاصيل الموقع',
+    businessHours: 'ساعات العمل',
+    businessHoursDetails: 'الاثنين - الجمعة: 9 صباحًا - 6 مساءً',
+    firstName: 'الاسم الأول',
+    lastName: 'اسم العائلة',
+    emailLabel: 'البريد الإلكتروني',
+    company: 'الشركة',
+    mobile: 'الجوال',
+    city: 'المدينة',
+    comments: 'التعليقات',
+    commentsPlaceholder: 'أخبرنا كيف يمكننا مساعدتك...',
+    sendMessage: 'إرسال الرسالة',
+  },
+
+  // CTA
+  cta: {
+    title: 'هل أنت مستعد لتحويل إدارة عقاراتك؟',
+    subtitle: 'انضم إلى مديري العقارات حول العالم الذين يقومون بتبسيط العمليات وزيادة الإيرادات',
+    startFreeTrial: 'ابدأ التجربة المجانية',
+    scheduleDemo: 'جدولة عرض توضيحي',
+    trialNote: 'لا حاجة لبطاقة ائتمان • تجربة مجانية 14 يومًا • إلغاء في أي وقت',
+  },
+
+  // Footer
+  footer: {
+    description: 'منصة إدارة عقارات حديثة للعصر الرقمي.',
+    product: 'المنتج',
+    features: 'المميزات',
+    pricing: 'الأسعار',
+    integrations: 'التكاملات',
+    company: 'الشركة',
+    about: 'عن الشركة',
+    careers: 'الوظائف',
+    blog: 'المدونة',
+    support: 'الدعم',
+    helpCenter: 'مركز المساعدة',
+    contact: 'اتصل بنا',
+    privacy: 'سياسة الخصوصية',
+    terms: 'شروط الخدمة',
+    allRightsReserved: 'جميع الحقوق محفوظة.',
+  },
+}
