@@ -13,7 +13,7 @@ export default function Hero() {
 
   const content = {
     en: {
-      badge: 'Smart Property Management SaaS',
+      // badge: 'Smart Property Management SaaS',
       title1: 'Enhance Property Management',
       title2: 'Through Smart SaaS Solutions',
       subtitle: 'Unified platform for booking management, rent collection, maintenance scheduling, and marketplace services',
@@ -56,14 +56,14 @@ export default function Hero() {
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div
+          {/* <div
             className={`inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-8 transition-all duration-500 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
             }`}
           >
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
             {t.badge}
-          </div>
+          </div> */}
 
           {/* Main heading */}
           <h1
