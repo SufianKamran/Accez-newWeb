@@ -17,8 +17,8 @@ export default function Hero() {
       title1: 'Enhance Property Management',
       title2: 'Through Smart SaaS Solutions',
       subtitle: 'Unified platform for booking management, rent collection, maintenance scheduling, and marketplace services',
-      startTrial: 'Start Free Trial',
-      watchDemo: 'Watch Demo',
+      // startTrial: 'Start Free Trial',
+      // watchDemo: 'Watch Demo',
       stat1: '400+',
       stat1Label: 'Integrated Channels',
       stat2: '30%',
@@ -87,7 +87,7 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div
+          {/* <div
             className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-700 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
@@ -98,7 +98,7 @@ export default function Hero() {
             <button className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 border border-gray-200">
               {t.watchDemo}
             </button>
-          </div>
+          </div> */}
 
           {/* Stats */}
           <div

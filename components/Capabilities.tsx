@@ -149,18 +149,18 @@ export default function Capabilities() {
                   onClick={() => setActiveTab(index)}
                   className={`w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300 text-left ${
                     activeTab === index
-                      ? 'bg-blue-600 text-white shadow-lg'
+                      ? 'bg-gray-900 text-white shadow-lg'
                       : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                   }`}
                 >
                   <div
                     className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
                       activeTab === index
-                        ? 'bg-blue-500'
+                        ? 'bg-gray-700'
                         : 'bg-gray-100'
                     }`}
                   >
-                    <span className={activeTab === index ? 'text-white' : 'text-blue-600'}>
+                    <span className={activeTab === index ? 'text-white' : 'text-gray-900'}>
                       {capability.icon}
                     </span>
                   </div>
