@@ -90,7 +90,7 @@ export default function FAQ() {
                 className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
               >
                 <button
-                  className="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
+                  className="w-full text-left p-6 focus:outline-none rounded-lg"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 >
                   <div className="flex justify-between items-center">
