@@ -243,16 +243,33 @@ export default function Pricing() {
                     {getBillingNote(pricing.billingNoteKey)}
                   </div>
 
-                  {/* CTA Button */}
-                  <button
-                    className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 ${
-                      plan.popular
-                        ? 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
-                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                    }`}
-                  >
-                    {isCustom ? t.pricing.contactSales : t.pricing.startFreeTrial}
-                  </button>
+{/* CTA Button */}
+{isCustom ? (
+  <a
+    href="#contact"
+    className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 text-center ${
+      plan.popular
+        ? 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
+        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+    }`}
+  >
+    {t.pricing.contactSales}
+  </a>
+) : (
+  <a
+    href="https://portal.accez.cloud/sign-up"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 text-center ${
+      plan.popular
+        ? 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
+        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+    }`}
+  >
+    {t.pricing.startFreeTrial}
+  </a>
+)}
+
 
                   {/* Features */}
                   <div className="space-y-4 text-left">
