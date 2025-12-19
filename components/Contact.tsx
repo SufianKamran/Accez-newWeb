@@ -108,7 +108,7 @@ export default function Contact() {
                         maxLength={40}
                         name="first_name"
                         type="text"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none text-gray-900 bg-white"
                         placeholder="John"
                       />
                     </div>
@@ -121,7 +121,7 @@ export default function Contact() {
                         maxLength={80}
                         name="last_name"
                         type="text"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none text-gray-900 bg-white"
                         placeholder="Doe"
                       />
                     </div>
@@ -136,7 +136,7 @@ export default function Contact() {
                       maxLength={80}
                       name="email"
                       type="email"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none text-gray-900 bg-white"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -150,7 +150,7 @@ export default function Contact() {
                       maxLength={40}
                       name="company"
                       type="text"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none text-gray-900 bg-white"
                       placeholder="Your Company"
                     />
                   </div>
@@ -165,7 +165,7 @@ export default function Contact() {
                         maxLength={40}
                         name="mobile"
                         type="tel"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none text-gray-900 bg-white"
                         placeholder="+1 234 567 8900"
                       />
                     </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                         maxLength={40}
                         name="city"
                         type="text"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none text-gray-900 bg-white"
                         placeholder="New York"
                       />
                     </div>
@@ -191,11 +191,11 @@ export default function Contact() {
                     <textarea
                       id="Description"
                       maxLength={3000}
-                      name="Description"
+                      name="description"
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none resize-vertical"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-200 outline-none resize-vertical min-h-[120px] text-gray-900 bg-white"
                       placeholder={t.contact.commentsPlaceholder}
-                    />
+                    ></textarea>
                   </div>
 
                   {/* reCAPTCHA */}
