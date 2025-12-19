@@ -63,12 +63,12 @@ export default function Footer() {
 
           {/* Manager Resources */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Manage Resources</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.manageResources}</h4>
             <ul className="space-y-2">
-              <li><a href="#capabilities" className="hover:text-white transition-colors">Property Dashboard</a></li>
-              <li><a href="#capabilities" className="hover:text-white transition-colors">Tenant Management</a></li>
-              <li><a href="#capabilities" className="hover:text-white transition-colors">Financial Reports</a></li>
-              <li><a href="#capabilities" className="hover:text-white transition-colors">Communication Tools</a></li>
+              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.propertyDashboard}</a></li>
+              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.tenantManagement}</a></li>
+              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.financialReports}</a></li>
+              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.communicationTools}</a></li>
             </ul>
           </div>
 
