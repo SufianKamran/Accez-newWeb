@@ -9,7 +9,8 @@
       "Bash(npm install:*)",
       "Bash(timeout 15 bash:*)",
       "Bash(taskkill:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []
