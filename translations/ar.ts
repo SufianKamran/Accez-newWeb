@@ -143,5 +143,7 @@ export const ar = {
     privacy: 'سياسة الخصوصية',
     terms: 'شروط الخدمة',
     allRightsReserved: 'جميع الحقوق محفوظة.',
+    // companyInfo: 'Accez.cloud هي شركة تابعة لـ Cloud Valley LLC',
+    companyInfo: 'اكسيز كلاود هي منتج  تابع لشركه وادي السحاب لتقنيه المعلومات',
   },
 }

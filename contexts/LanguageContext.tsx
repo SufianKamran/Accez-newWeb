@@ -16,11 +16,31 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('en')
 
   useEffect(() => {
-    // Check localStorage for saved language preference
-    const savedLang = localStorage.getItem('language') as Language
-    if (savedLang && (savedLang === 'en' || savedLang === 'ar')) {
-      setLanguage(savedLang)
+    const detectLanguage = async () => {
+      // Check localStorage for saved language preference first
+      const savedLang = localStorage.getItem('language') as Language
+      if (savedLang && (savedLang === 'en' || savedLang === 'ar')) {
+        setLanguage(savedLang)
+        return
+      }
+
+      // If no saved preference, detect country by IP
+      try {
+        const response = await fetch('https://ipapi.co/json/')
+        const data = await response.json()
+
+        // Set Arabic for Saudi Arabia (SA) and other Arabic-speaking countries
+        const arabicCountries = ['SA', 'AE', 'KW', 'QA', 'BH', 'OM', 'EG', 'JO', 'LB', 'IQ']
+        if (arabicCountries.includes(data.country_code)) {
+          setLanguage('ar')
+        }
+      } catch (error) {
+        // If geolocation fails, keep default English
+        console.log('Could not detect location, defaulting to English')
+      }
     }
+
+    detectLanguage()
   }, [])
 
   useEffect(() => {

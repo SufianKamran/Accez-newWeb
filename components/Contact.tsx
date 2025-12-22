@@ -50,7 +50,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">{t.contact.email}</h3>
-                      <p className="text-gray-600">support@accez.cloud</p>
+                      <p className="text-gray-600">contact@accez.cloud</p>
                     </div>
                   </div>
 

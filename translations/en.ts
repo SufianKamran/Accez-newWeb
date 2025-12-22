@@ -143,5 +143,6 @@ export const en = {
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
     allRightsReserved: 'All rights reserved.',
+    companyInfo: 'Accez.cloud is a Cloud Valley LLC company',
   },
 }
