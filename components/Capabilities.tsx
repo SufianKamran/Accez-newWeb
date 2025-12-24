@@ -140,9 +140,72 @@ export default function Capabilities() {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Mobile Layout - Buttons with inline content */}
+          <div className="lg:hidden space-y-2">
+            {capabilities.map((capability, index) => (
+              <div key={capability.id}>
+                <button
+                  onClick={() => setActiveTab(activeTab === index ? -1 : index)}
+                  className={`w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300 text-left ${
+                    activeTab === index
+                      ? 'bg-gray-900 text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  <div
+                    className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                      activeTab === index
+                        ? 'bg-gray-700'
+                        : 'bg-gray-100'
+                    }`}
+                  >
+                    <span className={activeTab === index ? 'text-white' : 'text-gray-900'}>
+                      {capability.icon}
+                    </span>
+                  </div>
+                  <span className="font-medium flex-1">
+                    {language === 'ar' ? capability.titleAr : capability.title}
+                  </span>
+                  {/* Chevron indicator */}
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${
+                      activeTab === index ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* Inline content for mobile - shown below selected button */}
+                {activeTab === index && (
+                  <div className="mt-2 bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div className="relative aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                      <Image
+                        src={capability.image}
+                        alt={language === 'ar' ? capability.titleAr : capability.title}
+                        fill
+                        className="object-cover"
+                        sizes="100vw"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        {language === 'ar' ? capability.descriptionAr : capability.description}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Layout - Side by side */}
+          <div className="hidden lg:grid grid-cols-12 gap-8 items-start">
             {/* Left side - Tab buttons */}
-            <div className="lg:col-span-4 space-y-2">
+            <div className="col-span-4 space-y-2">
               {capabilities.map((capability, index) => (
                 <button
                   key={capability.id}
@@ -172,22 +235,18 @@ export default function Capabilities() {
             </div>
 
             {/* Right side - Content */}
-            <div className="lg:col-span-8">
+            <div className="col-span-8">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                {/* Image placeholder - replace with actual images */}
-{/* Capability Image */}
-<div className="relative aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-  <Image
-    src={activeCapability.image}
-    alt={language === 'ar' ? activeCapability.titleAr : activeCapability.title}
-    fill
-    className="object-cover"
-    sizes="(max-width: 1024px) 100vw, 66vw"
-    priority={activeTab === 0}
-  />
-</div>
-
-                {/* Description */}
+                <div className="relative aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                  <Image
+                    src={activeCapability.image}
+                    alt={language === 'ar' ? activeCapability.titleAr : activeCapability.title}
+                    fill
+                    className="object-cover"
+                    sizes="66vw"
+                    priority={activeTab === 0}
+                  />
+                </div>
                 <div className="p-6">
                   <p className="text-gray-600 leading-relaxed">
                     {language === 'ar' ? activeCapability.descriptionAr : activeCapability.description}
