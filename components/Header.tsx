@@ -57,11 +57,21 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-gray-900"
-          >
+          {/* Mobile - Language Toggle & Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Language Switcher - Mobile Header */}
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+              className="p-2 text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200"
+            >
+              {language === 'en' ? 'العربية' : 'EN'}
+            </button>
+
+            {/* Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-gray-600 hover:text-gray-900"
+            >
             {isMobileMenuOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -71,7 +81,8 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
-          </button>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -88,17 +99,6 @@ export default function Header() {
                   {item.name}
                 </a>
               ))}
-
-              {/* Language Switcher - Mobile */}
-              <button
-                onClick={() => {
-                  setLanguage(language === 'en' ? 'ar' : 'en')
-                  setIsMobileMenuOpen(false)
-                }}
-                className="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200 text-left"
-              >
-                {language === 'en' ? 'العربية' : 'English'}
-              </button>
 
               <Link
                 href="#pricing"
