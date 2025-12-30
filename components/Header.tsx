@@ -13,6 +13,7 @@ export default function Header() {
     { name: t.header.features, href: '#features' },
     { name: t.header.pricing, href: '#pricing' },
     { name: t.header.faq, href: '#faq' },
+    { name: t.header.blog, href: '/blog' },
     { name: t.header.contact, href: '#contact' },
   ]
 

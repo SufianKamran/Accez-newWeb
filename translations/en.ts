@@ -4,6 +4,7 @@ export const en = {
     features: 'Features',
     pricing: 'Pricing',
     faq: 'FAQ',
+    blog: 'Blog',
     contact: 'Contact',
     startFreeTrial: 'Start Free Trial',
   },
