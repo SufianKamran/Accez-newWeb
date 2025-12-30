@@ -14,6 +14,7 @@ export default function Header() {
     { name: t.header.pricing, href: '#pricing' },
     { name: t.header.faq, href: '#faq' },
     { name: t.header.blog, href: '/blog' },
+    { name: t.header.support, href: '/support' },
     { name: t.header.contact, href: '#contact' },
   ]
 

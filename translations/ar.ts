@@ -5,6 +5,7 @@ export const ar = {
     pricing: 'الأسعار',
     faq: 'الأسئلة الشائعة',
     blog: 'المدونة',
+    support: 'الدعم',
     contact: 'اتصل بنا',
     startFreeTrial: 'ابدأ التجربة المجانية',
   },

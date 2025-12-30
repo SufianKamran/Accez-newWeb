@@ -5,6 +5,7 @@ export const en = {
     pricing: 'Pricing',
     faq: 'FAQ',
     blog: 'Blog',
+    support: 'Support',
     contact: 'Contact',
     startFreeTrial: 'Start Free Trial',
   },
