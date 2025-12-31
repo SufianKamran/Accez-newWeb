@@ -57,33 +57,68 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
 
   // Simple markdown to HTML converter
   const renderMarkdown = (markdown: string) => {
-    let html = markdown
-      // Headers
-      .replace(/^### (.*$)/gm, '<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">$1</h3>')
-      .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">$1</h2>')
-      .replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold text-gray-900 mt-10 mb-4">$1</h1>')
-      // Bold and Italic
-      .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      // Links
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
-      // Unordered lists
-      .replace(/^\- (.*$)/gm, '<li class="ml-6 list-disc">$1</li>')
-      // Paragraphs (double newline)
-      .split('\n\n')
-      .map(para => {
-        if (para.startsWith('<h') || para.startsWith('<li') || para.startsWith('<ul')) {
-          return para
-        }
-        if (para.includes('<li')) {
-          return `<ul class="my-4 space-y-2">${para}</ul>`
-        }
-        return `<p class="text-gray-700 leading-relaxed mb-4">${para}</p>`
-      })
-      .join('')
+    // Split by double newlines to get paragraphs/blocks
+    const blocks = markdown.split('\n\n')
 
-    return html
+    const processedBlocks = blocks.map(block => {
+      // Check if block is a header
+      if (block.match(/^###\s/)) {
+        return block.replace(/^### (.*$)/gm, '<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">$1</h3>')
+      }
+      if (block.match(/^##\s/)) {
+        return block.replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">$1</h2>')
+      }
+      if (block.match(/^#\s/)) {
+        return block.replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold text-gray-900 mt-10 mb-4">$1</h1>')
+      }
+
+      // Check if block contains list items (lines starting with -)
+      if (block.match(/^- /m)) {
+        const listItems = block.split('\n').map(line => {
+          if (line.match(/^- /)) {
+            let content = line.replace(/^- /, '')
+            // Apply inline formatting
+            content = content
+              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+            return `<li class="ml-6 list-disc text-gray-700">${content}</li>`
+          }
+          return line
+        }).join('\n')
+        return `<ul class="my-4 space-y-2">${listItems}</ul>`
+      }
+
+      // Check if block contains numbered list (lines starting with number.)
+      if (block.match(/^\d+\.\s/m)) {
+        const listItems = block.split('\n').map(line => {
+          if (line.match(/^\d+\.\s/)) {
+            let content = line.replace(/^\d+\.\s/, '')
+            // Apply inline formatting
+            content = content
+              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+            return `<li class="ml-6 list-decimal text-gray-700">${content}</li>`
+          }
+          return line
+        }).join('\n')
+        return `<ol class="my-4 space-y-2">${listItems}</ol>`
+      }
+
+      // Regular paragraph - apply inline formatting
+      let processed = block
+        .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+
+      return `<p class="text-gray-700 leading-relaxed mb-4">${processed}</p>`
+    })
+
+    return processedBlocks.join('')
   }
 
   if (!post) {

@@ -41,6 +41,22 @@ export const blogPosts: BlogPostMeta[] = [
     readingTime: '5 min read',
   },
   {
+    slug: 'how-to-create-manage-units-accez-cloud',
+    title: 'How to Create and Manage Units in Accez.Cloud',
+    titleAr: 'كيفية إنشاء وإدارة الوحدات في Accez.Cloud',
+    excerpt: 'Complete guide to creating and managing rental units in Accez.Cloud. Learn about long-term vs short-term units, pricing, lease management, and tenant assignments.',
+    excerptAr: 'دليل شامل لإنشاء وإدارة الوحدات الإيجارية في Accez.Cloud. تعرف على الوحدات طويلة الأجل مقابل قصيرة الأجل والتسعير وإدارة عقود الإيجار وتعيين المستأجرين.',
+    date: '2024-12-18',
+    author: 'Accez Team',
+    authorAr: 'فريق أكسيز',
+    coverImage: '/images/blog/property-management-image.jpg',
+    category: 'Tutorials',
+    categoryAr: 'الدروس التعليمية',
+    tags: ['Unit Management', 'Getting Started', 'Tutorial', 'Units'],
+    tagsAr: ['إدارة الوحدات', 'البدء', 'دروس تعليمية', 'الوحدات'],
+    readingTime: '6 min read',
+  },
+  {
     slug: 'getting-started-with-property-management',
     title: 'Getting Started with Property Management Software',
     titleAr: 'البدء باستخدام برنامج إدارة العقارات',
@@ -202,6 +218,266 @@ For a visual walkthrough of the entire property creation process, watch our comp
 - معلومات العنوان الكاملة ضرورية لإدارة العقارات
 - يمكن تعديل وتحديث العقارات في أي وقت
 - توفر بطاقة العقار وصولاً سريعاً لجميع تفاصيل العقار`,
+  },
+  'how-to-create-manage-units-accez-cloud': {
+    content: `Units are the foundation of your property management operations in Accez.Cloud. Whether you're managing long-term residential rentals or short-term vacation properties, our platform makes unit creation and management straightforward and efficient. This guide covers everything you need to know about setting up and managing your units.
+
+## Prerequisites
+
+Before creating units, ensure you have:
+
+- An existing property in Accez.Cloud (Learn how to create properties)
+- Active resident accounts (required for long-term units)
+
+## Understanding Unit Types
+
+Accez.Cloud supports two types of units:
+
+**Long-Term Units**: Designed for traditional residential rentals with lease agreements, tenant assignments, and extended stay periods.
+
+**Short-Term Units**: Perfect for vacation rentals, temporary stays, and flexible booking arrangements.
+
+## Step 1: Access Unit Creation
+
+From your dashboard, click on your property card to enter the property details section. Select the "Units" header from the navigation menu. If you haven't created any units yet, you'll see an option to add your first unit.
+
+Click the "Add Your First Unit" button to begin.
+
+## Step 2: Choose Your Unit Type
+
+A new page will appear with the option to create either a short-term or long-term unit. By default, long-term unit is selected. For this guide, we'll focus on creating a long-term unit.
+
+**Important Note**: Long-term units require an active resident to be assigned. Make sure you have resident accounts created before proceeding.
+
+## Step 3: Fill in General Unit Information
+
+Complete the following sections:
+
+**Basic Information:**
+- Unit number or name
+- Unit type (apartment, studio, etc.)
+- Square footage
+- Number of bedrooms and bathrooms
+
+**Property Details and Amenities:**
+- List all amenities included (parking, balcony, appliances, etc.)
+- Special features
+- Pet policies
+- Furnishing status
+
+**Availability Status:**
+- Available
+- Occupied
+- Under maintenance
+
+## Step 4: Configure Ownership and Tenant Information
+
+This critical section requires:
+
+**Ownership Type:**
+- Owned by Company
+- Privately Owned
+
+**Tenant Assignment:**
+- Select the resident who will occupy the unit
+- Enter the rental price you'll charge the resident
+
+**Lease Duration:**
+- Start date of the lease
+- End date of the lease
+- This determines how long the resident can stay in the unit
+
+## Step 5: Add Additional Information and Images
+
+Complete any optional additional information that provides context about the unit. This section can be skipped if not necessary.
+
+Upload high-quality images of the unit showing:
+- Living spaces
+- Kitchen and bathrooms
+- Special features
+- Views
+
+## Step 6: Save Your Unit
+
+After filling in all required information, click the "Save" button. Your long-term unit is now successfully created and will appear in your units list.
+
+## Managing Existing Units
+
+### Viewing Unit Details
+
+Click on the three-dot icon next to any unit and select "View" to see complete unit information. You can scroll through all the details you've entered and verify everything is correct.
+
+### Editing Units
+
+If you need to update any information:
+
+1. Click the "Edit" button while viewing unit details
+2. Make your changes (e.g., update availability status, change pricing, modify amenities)
+3. Click "Save" to apply your updates
+
+The system will immediately reflect your changes.
+
+## Watch the Full Video Tutorial
+
+See the complete unit creation process in action:
+
+[Watch: How to Create & Edit Units in Accez.Cloud](https://youtu.be/YYPe_ZtuYWc?si=RBAiW_8kAQ4_c79Y)
+
+## Key Takeaways
+
+- Long-term units require active resident accounts for tenant assignment
+- Ownership type affects how the unit is managed and reported
+- Lease duration is critical for tracking occupancy and renewals
+- Detailed amenity lists help attract quality tenants
+- Units can be edited and updated at any time
+- Availability status helps track unit occupancy in real-time
+
+## Best Practices for Unit Management
+
+**Keep Information Updated**: Regularly review and update unit details, especially availability status and pricing.
+
+**Use High-Quality Images**: Professional photos significantly improve unit appeal and can reduce vacancy times.
+
+**Detailed Amenity Lists**: Comprehensive amenity information helps residents make informed decisions.
+
+**Regular Maintenance Tracking**: Use availability status to track units under maintenance or renovation.
+
+## Next Steps
+
+With your units created, you're ready to:
+
+- Set up work order management for maintenance requests
+- Configure services and amenities for resident bookings
+- Connect distribution channels for short-term units`,
+    contentAr: `الوحدات هي أساس عمليات إدارة العقارات الخاصة بك في Accez.Cloud. سواء كنت تدير إيجارات سكنية طويلة الأجل أو عقارات عطلات قصيرة الأجل، تجعل منصتنا إنشاء الوحدات وإدارتها أمراً بسيطاً وفعالاً. يغطي هذا الدليل كل ما تحتاج لمعرفته حول إعداد وإدارة وحداتك.
+
+## المتطلبات الأساسية
+
+قبل إنشاء الوحدات، تأكد من أن لديك:
+
+- عقار موجود في Accez.Cloud (تعرف على كيفية إنشاء العقارات)
+- حسابات مقيمين نشطة (مطلوبة للوحدات طويلة الأجل)
+
+## فهم أنواع الوحدات
+
+يدعم Accez.Cloud نوعين من الوحدات:
+
+**الوحدات طويلة الأجل**: مصممة للإيجارات السكنية التقليدية مع عقود الإيجار وتعيينات المستأجرين وفترات الإقامة الممتدة.
+
+**الوحدات قصيرة الأجل**: مثالية لإيجارات العطلات والإقامات المؤقتة وترتيبات الحجز المرنة.
+
+## الخطوة 1: الوصول إلى إنشاء الوحدة
+
+من لوحة التحكم، انقر على بطاقة العقار للدخول إلى قسم تفاصيل العقار. حدد رأس "الوحدات" من قائمة التنقل. إذا لم تكن قد أنشأت أي وحدات بعد، سترى خياراً لإضافة أول وحدة.
+
+انقر على زر "إضافة أول وحدة لك" للبدء.
+
+## الخطوة 2: اختر نوع الوحدة
+
+ستظهر صفحة جديدة مع خيار إنشاء وحدة قصيرة الأجل أو طويلة الأجل. بشكل افتراضي، يتم تحديد الوحدة طويلة الأجل. في هذا الدليل، سنركز على إنشاء وحدة طويلة الأجل.
+
+**ملاحظة مهمة**: تتطلب الوحدات طويلة الأجل تعيين مقيم نشط. تأكد من إنشاء حسابات المقيمين قبل المتابعة.
+
+## الخطوة 3: ملء معلومات الوحدة العامة
+
+أكمل الأقسام التالية:
+
+**المعلومات الأساسية:**
+- رقم أو اسم الوحدة
+- نوع الوحدة (شقة، استوديو، إلخ.)
+- المساحة بالقدم المربع
+- عدد غرف النوم والحمامات
+
+**تفاصيل العقار والمرافق:**
+- قائمة جميع المرافق المتضمنة (موقف سيارات، شرفة، أجهزة، إلخ.)
+- الميزات الخاصة
+- سياسات الحيوانات الأليفة
+- حالة التأثيث
+
+**حالة التوفر:**
+- متاح
+- مشغول
+- تحت الصيانة
+
+## الخطوة 4: تكوين معلومات الملكية والمستأجر
+
+يتطلب هذا القسم الحاسم:
+
+**نوع الملكية:**
+- مملوك للشركة
+- مملوك بشكل خاص
+
+**تعيين المستأجر:**
+- حدد المقيم الذي سيشغل الوحدة
+- أدخل سعر الإيجار الذي ستفرضه على المقيم
+
+**مدة الإيجار:**
+- تاريخ بدء عقد الإيجار
+- تاريخ انتهاء عقد الإيجار
+- يحدد هذا المدة التي يمكن للمقيم البقاء فيها في الوحدة
+
+## الخطوة 5: إضافة معلومات وصور إضافية
+
+أكمل أي معلومات إضافية اختيارية توفر سياقاً حول الوحدة. يمكن تخطي هذا القسم إذا لم يكن ضرورياً.
+
+قم برفع صور عالية الجودة للوحدة تُظهر:
+- مساحات المعيشة
+- المطبخ والحمامات
+- الميزات الخاصة
+- المناظر
+
+## الخطوة 6: حفظ الوحدة
+
+بعد ملء جميع المعلومات المطلوبة، انقر على زر "حفظ". تم الآن إنشاء وحدتك طويلة الأجل بنجاح وستظهر في قائمة الوحدات الخاصة بك.
+
+## إدارة الوحدات الموجودة
+
+### عرض تفاصيل الوحدة
+
+انقر على أيقونة النقاط الثلاث بجوار أي وحدة وحدد "عرض" لرؤية معلومات الوحدة الكاملة. يمكنك التمرير عبر جميع التفاصيل التي أدخلتها والتحقق من صحة كل شيء.
+
+### تعديل الوحدات
+
+إذا كنت بحاجة لتحديث أي معلومات:
+
+1. انقر على زر "تعديل" أثناء عرض تفاصيل الوحدة
+2. قم بإجراء تغييراتك (مثل تحديث حالة التوفر، تغيير التسعير، تعديل المرافق)
+3. انقر على "حفظ" لتطبيق تحديثاتك
+
+سيعكس النظام تغييراتك على الفور.
+
+## شاهد الفيديو التعليمي الكامل
+
+شاهد عملية إنشاء الوحدة الكاملة عملياً:
+
+[شاهد: كيفية إنشاء وتعديل الوحدات في Accez.Cloud](https://youtu.be/YYPe_ZtuYWc?si=RBAiW_8kAQ4_c79Y)
+
+## النقاط الرئيسية
+
+- تتطلب الوحدات طويلة الأجل حسابات مقيمين نشطة لتعيين المستأجر
+- يؤثر نوع الملكية على كيفية إدارة الوحدة والإبلاغ عنها
+- مدة الإيجار حاسمة لتتبع الإشغال والتجديدات
+- قوائم المرافق التفصيلية تساعد في جذب مستأجرين جيدين
+- يمكن تعديل وتحديث الوحدات في أي وقت
+- تساعد حالة التوفر في تتبع إشغال الوحدة في الوقت الفعلي
+
+## أفضل الممارسات لإدارة الوحدات
+
+**حافظ على تحديث المعلومات**: راجع وحدّث تفاصيل الوحدة بانتظام، خاصة حالة التوفر والتسعير.
+
+**استخدم صوراً عالية الجودة**: الصور الاحترافية تحسن جاذبية الوحدة بشكل كبير ويمكن أن تقلل من أوقات الشغور.
+
+**قوائم مرافق مفصلة**: معلومات المرافق الشاملة تساعد المقيمين على اتخاذ قرارات مستنيرة.
+
+**تتبع الصيانة المنتظمة**: استخدم حالة التوفر لتتبع الوحدات تحت الصيانة أو التجديد.
+
+## الخطوات التالية
+
+مع إنشاء وحداتك، أنت جاهز لـ:
+
+- إعداد إدارة أوامر العمل لطلبات الصيانة
+- تكوين الخدمات والمرافق لحجوزات المقيمين
+- توصيل قنوات التوزيع للوحدات قصيرة الأجل`,
   },
   'getting-started-with-property-management': {
     content: `Property management software has revolutionized how landlords and property managers handle their rental portfolios. In this guide, we'll explore the key benefits and features you should look for.
