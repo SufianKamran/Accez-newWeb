@@ -36,7 +36,6 @@ export default function Pricing() {
         { textKey: 'workOrdersManagement', highlight: false },
         { textKey: 'moveInOutTracking', highlight: false },
         { textKey: 'announcements', highlight: false },
-        { textKey: 'documentLibrary', highlight: false },
         { textKey: 'tenantPerks', highlight: false },
         { textKey: 'communityNewsFeed', highlight: false },
       ] as Feature[],
