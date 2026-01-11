@@ -58,9 +58,22 @@ export const en = {
     trialNote: 'All plans include a 14-day free trial. Cancel anytime.',
     tailored: 'Tailored to your needs',
     // Plan names
+    free: 'Free',
     basic: 'Basic',
     professional: 'Professional',
     enterprise: 'Enterprise',
+    // CTA buttons
+    startFree: 'Start Free',
+    // Billing notes
+    noCreditCard: 'No credit card required',
+    // Free plan features
+    freeProperty1: '1 Property only',
+    freeResidents5: '5 Residents max',
+    freeCheckIns10: '10 Check-ins per month',
+    freeWorkOrders10: '10 Work Orders per month',
+    freeUnlimitedServices: 'Unlimited Services',
+    freeBasicDashboard: 'Basic Dashboard',
+    freeNoPremiumSupport: 'No Premium Support',
     // Features
     properties3: '3 Properties',
     properties6: '6 Properties',

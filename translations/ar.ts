@@ -58,9 +58,22 @@ export const ar = {
     trialNote: 'جميع الخطط تتضمن تجربة مجانية لمدة 14 يومًا. يمكنك الإلغاء في أي وقت.',
     tailored: 'مصمم حسب احتياجاتك',
     // Plan names
+    free: 'مجاني',
     basic: 'الأساسية',
     professional: 'الاحترافية',
     enterprise: 'المؤسسات',
+    // CTA buttons
+    startFree: 'ابدأ مجاناً',
+    // Billing notes
+    noCreditCard: 'لا حاجة لبطاقة ائتمان',
+    // Free plan features
+    freeProperty1: 'عقار واحد فقط',
+    freeResidents5: '5 مقيمين كحد أقصى',
+    freeCheckIns10: '10 تسجيلات دخول شهرياً',
+    freeWorkOrders10: '10 أوامر عمل شهرياً',
+    freeUnlimitedServices: 'خدمات غير محدودة',
+    freeBasicDashboard: 'لوحة تحكم أساسية',
+    freeNoPremiumSupport: 'بدون دعم متميز',
     // Features
     properties3: '3 عقارات',
     properties6: '6 عقارات',

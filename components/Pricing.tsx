@@ -7,6 +7,7 @@ interface Feature {
   textKey: string
   highlight: boolean
   suffixKey?: string
+  excluded?: boolean
 }
 
 export default function Pricing() {
@@ -14,6 +15,36 @@ export default function Pricing() {
   const { t } = useLanguage()
 
   const plans = [
+    {
+      nameKey: 'free',
+      icon: 'gift',
+      monthly: {
+        price: 0,
+        originalPrice: null,
+        periodKey: '',
+        billingNoteKey: 'noCreditCard',
+      },
+      yearly: {
+        price: 0,
+        originalPrice: null,
+        periodKey: '',
+        billingNoteKey: 'noCreditCard',
+      },
+      discountKey: null,
+      features: [
+        { textKey: 'freeProperty1', highlight: true },
+        { textKey: 'freeResidents5', highlight: true },
+        { textKey: 'freeCheckIns10', highlight: true },
+        { textKey: 'freeWorkOrders10', highlight: true },
+        { textKey: 'freeUnlimitedServices', highlight: false },
+        { textKey: 'freeBasicDashboard', highlight: false },
+        { textKey: 'propertyManagement', highlight: false },
+        { textKey: 'announcements', highlight: false },
+        { textKey: 'freeNoPremiumSupport', highlight: false, excluded: true },
+      ] as Feature[],
+      popular: false,
+      isFree: true,
+    },
     {
       nameKey: 'basic',
       icon: 'check',
@@ -100,6 +131,7 @@ export default function Pricing() {
 
   const getPlanName = (key: string) => {
     const names: Record<string, string> = {
+      free: t.pricing.free,
       basic: t.pricing.basic,
       professional: t.pricing.professional,
       enterprise: t.pricing.enterprise,
@@ -117,6 +149,14 @@ export default function Pricing() {
 
   const PlanIcon = ({ type }: { type: string }) => {
     switch (type) {
+      case 'gift':
+        return (
+          <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
+            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+            </svg>
+          </div>
+        )
       case 'check':
         return (
           <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
@@ -185,7 +225,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => {
             const pricing = isYearly ? plan.yearly : plan.monthly
             const isCustom = pricing.price === 'Custom'
@@ -265,7 +305,7 @@ export default function Pricing() {
         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
     }`}
   >
-    {t.pricing.startFreeTrial}
+    {(plan as { isFree?: boolean }).isFree ? t.pricing.startFree : t.pricing.startFreeTrial}
   </a>
 )}
 
@@ -274,20 +314,36 @@ export default function Pricing() {
                   <div className="space-y-4 text-left">
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-700">
+                        {feature.excluded ? (
+                          <svg
+                            className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0 mt-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        ) : (
+                          <svg
+                            className="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0 mt-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        )}
+                        <span className={feature.excluded ? 'text-gray-400' : 'text-gray-700'}>
                           {feature.highlight ? (
                             <>
                               <strong>{getFeatureText(feature.textKey)}</strong>
