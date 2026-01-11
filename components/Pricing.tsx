@@ -286,11 +286,7 @@ export default function Pricing() {
 {isCustom ? (
   <a
     href="#contact"
-    className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 text-center ${
-      plan.popular
-        ? 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
-        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-    }`}
+    className="block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 text-center bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg"
   >
     {t.pricing.contactSales}
   </a>
@@ -299,11 +295,7 @@ export default function Pricing() {
     href="https://portal.accez.cloud/sign-up"
     target="_blank"
     rel="noopener noreferrer"
-    className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 text-center ${
-      plan.popular
-        ? 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
-        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-    }`}
+    className="block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 mb-8 text-center bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg"
   >
     {(plan as { isFree?: boolean }).isFree ? t.pricing.startFree : t.pricing.startFreeTrial}
   </a>
