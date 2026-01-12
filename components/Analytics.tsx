@@ -4,7 +4,7 @@ import Script from 'next/script'
 
 export function Analytics() {
   // Replace these with your actual IDs
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-GBPD3L2X7T'
   const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX'
   const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY || 'phc_xxxxxxxxxxxxxxxxx'
   const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com'
