@@ -91,6 +91,7 @@ export const en = {
     amenitiesBooking: 'Amenities Booking',
     servicesManagement: 'Services Management',
     autoCalendarSync: 'Auto Calendar Sync (iCal)',
+    upTo3Channels: 'Up to 3 channels configuration',
     propertyOwnerPortal: 'Property Owner Portal',
     customBrandedDomain: 'Custom Branded Domain',
     whiteLabelMobileApp: 'Upto 400 channels configuration',

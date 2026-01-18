@@ -91,6 +91,7 @@ export const ar = {
     amenitiesBooking: 'حجز المرافق',
     servicesManagement: 'إدارة الخدمات',
     autoCalendarSync: 'مزامنة التقويم التلقائية (iCal)',
+    upTo3Channels: 'حتى 3 قنوات تكوين',
     propertyOwnerPortal: 'بوابة مالك العقار',
     customBrandedDomain: 'نطاق مخصص بعلامتك التجارية',
     whiteLabelMobileApp: 'حتى 400 قناة تكوين',

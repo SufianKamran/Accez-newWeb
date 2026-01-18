@@ -91,6 +91,7 @@ export default function Pricing() {
       features: [
         { textKey: 'everythingInBasic', highlight: false },
         { textKey: 'properties6', highlight: true, suffixKey: 'unitsEach' },
+        { textKey: 'upTo3Channels', highlight: true },
         { textKey: 'integratedCommunications', highlight: false },
         { textKey: 'amenitiesBooking', highlight: false },
         { textKey: 'servicesManagement', highlight: false },
