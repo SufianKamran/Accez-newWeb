@@ -74,44 +74,70 @@ export default function BlogPostClient({ slug }: BlogPostClientProps) {
 
       // Check if block contains list items (lines starting with -)
       if (block.match(/^- /m)) {
-        const listItems = block.split('\n').map(line => {
+        const lines = block.split('\n')
+        let leadingParagraph = ''
+        const listLines: string[] = []
+        let inList = false
+
+        lines.forEach(line => {
           if (line.match(/^- /)) {
+            inList = true
             let content = line.replace(/^- /, '')
-            // Apply inline formatting
             content = content
-              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
-              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="text-gray-900"><em>$1</em></strong>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>')
               .replace(/\*(.*?)\*/g, '<em>$1</em>')
               .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
-            return `<li class="ml-6 list-disc text-gray-700">${content}</li>`
+            listLines.push(`<li class="ml-6 list-disc text-gray-700">${content}</li>`)
+          } else if (!inList && line.trim()) {
+            // This is a leading paragraph before the list
+            let processed = line
+              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="text-gray-900"><em>$1</em></strong>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>')
+              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+            leadingParagraph = `<p class="text-gray-700 leading-relaxed mb-2">${processed}</p>`
           }
-          return line
-        }).join('\n')
-        return `<ul class="my-4 space-y-2">${listItems}</ul>`
+        })
+
+        return leadingParagraph + `<ul class="my-4 space-y-2">${listLines.join('\n')}</ul>`
       }
 
       // Check if block contains numbered list (lines starting with number.)
       if (block.match(/^\d+\.\s/m)) {
-        const listItems = block.split('\n').map(line => {
+        const lines = block.split('\n')
+        let leadingParagraph = ''
+        const listLines: string[] = []
+        let inList = false
+
+        lines.forEach(line => {
           if (line.match(/^\d+\.\s/)) {
+            inList = true
             let content = line.replace(/^\d+\.\s/, '')
-            // Apply inline formatting
             content = content
-              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
-              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="text-gray-900"><em>$1</em></strong>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>')
               .replace(/\*(.*?)\*/g, '<em>$1</em>')
               .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
-            return `<li class="ml-6 list-decimal text-gray-700">${content}</li>`
+            listLines.push(`<li class="ml-6 list-decimal text-gray-700">${content}</li>`)
+          } else if (!inList && line.trim()) {
+            // This is a leading paragraph before the list
+            let processed = line
+              .replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="text-gray-900"><em>$1</em></strong>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>')
+              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+            leadingParagraph = `<p class="text-gray-700 leading-relaxed mb-2">${processed}</p>`
           }
-          return line
-        }).join('\n')
-        return `<ol class="my-4 space-y-2">${listItems}</ol>`
+        })
+
+        return leadingParagraph + `<ol class="my-4 space-y-2">${listLines.join('\n')}</ol>`
       }
 
       // Regular paragraph - apply inline formatting
       let processed = block
-        .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="text-gray-900"><em>$1</em></strong>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900">$1</strong>')
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
 
