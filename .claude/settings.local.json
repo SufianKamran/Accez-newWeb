@@ -10,7 +10,8 @@
       "Bash(timeout 15 bash:*)",
       "Bash(taskkill:*)",
       "Bash(curl:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
