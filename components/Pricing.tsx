@@ -33,10 +33,9 @@ export default function Pricing() {
       discountKey: null,
       features: [
         { textKey: 'freeProperty1', highlight: true },
-        { textKey: 'freeResidents5', highlight: true },
+        { textKey: 'freeUnlimitedServices', highlight: true },
         { textKey: 'freeCheckIns10', highlight: true },
         { textKey: 'freeWorkOrders10', highlight: true },
-        { textKey: 'freeUnlimitedServices', highlight: false },
         { textKey: 'freeBasicDashboard', highlight: false },
         { textKey: 'propertyManagement', highlight: false },
         { textKey: 'announcements', highlight: false },
