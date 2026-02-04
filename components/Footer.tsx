@@ -55,8 +55,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.product}</h4>
             <ul className="space-y-2">
-              <li><a href="#features" className="hover:text-white transition-colors">{t.footer.features}</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">{t.footer.pricing}</a></li>
+              <li><a href="/#features" className="hover:text-white transition-colors">{t.footer.features}</a></li>
+              <li><a href="/#pricing" className="hover:text-white transition-colors">{t.footer.pricing}</a></li>
               <li><a href="#" className="hover:text-white transition-colors">{t.footer.integrations}</a></li>
             </ul>
           </div>
@@ -65,10 +65,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.manageResources}</h4>
             <ul className="space-y-2">
-              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.propertyDashboard}</a></li>
-              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.tenantManagement}</a></li>
-              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.financialReports}</a></li>
-              <li><a href="#capabilities" className="hover:text-white transition-colors">{t.footer.communicationTools}</a></li>
+              <li><a href="/#capabilities" className="hover:text-white transition-colors">{t.footer.propertyDashboard}</a></li>
+              <li><a href="/#capabilities" className="hover:text-white transition-colors">{t.footer.tenantManagement}</a></li>
+              <li><a href="/#capabilities" className="hover:text-white transition-colors">{t.footer.financialReports}</a></li>
+              <li><a href="/#capabilities" className="hover:text-white transition-colors">{t.footer.communicationTools}</a></li>
             </ul>
           </div>
 
@@ -86,9 +86,9 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.support}</h4>
             <ul className="space-y-2">
-              <li><a href="#faq" className="hover:text-white transition-colors">{t.header.faq}</a></li>
+              <li><a href="/#faq" className="hover:text-white transition-colors">{t.header.faq}</a></li>
               <li><a href="#" className="hover:text-white transition-colors">{t.footer.helpCenter}</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">{t.footer.contact}</a></li>
+              <li><a href="/#contact" className="hover:text-white transition-colors">{t.footer.contact}</a></li>
             </ul>
           </div>
         </div>

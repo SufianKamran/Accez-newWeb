@@ -10,12 +10,12 @@ export default function Header() {
   const { language, setLanguage, t } = useLanguage()
 
   const navItems = [
-    { name: t.header.features, href: '#features' },
-    { name: t.header.pricing, href: '#pricing' },
-    { name: t.header.faq, href: '#faq' },
+    { name: t.header.features, href: '/#features' },
+    { name: t.header.pricing, href: '/#pricing' },
+    { name: t.header.faq, href: '/#faq' },
     { name: t.header.blog, href: '/blog' },
     { name: t.header.support, href: '/support' },
-    { name: t.header.contact, href: '#contact' },
+    { name: t.header.contact, href: '/#contact' },
   ]
 
   return (
