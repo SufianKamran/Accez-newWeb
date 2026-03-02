@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Cairo } from 'next/font/google'
 import './globals.css'
+import Script from 'next/script'
 import { Analytics } from '@/components/Analytics'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
@@ -69,6 +70,26 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Script
+          id="accez-chatbot"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              fetch("https://accez-chatbot-production.up.railway.app/widget")
+                .then(r => r.text())
+                .then(html => {
+                  var div = document.createElement("div");
+                  div.innerHTML = html;
+                  document.body.appendChild(div);
+                  div.querySelectorAll("script").forEach(function(s) {
+                    var ns = document.createElement("script");
+                    ns.textContent = s.textContent;
+                    document.body.appendChild(ns);
+                  });
+                });
+            `,
+          }}
+        />
       </body>
     </html>
   )

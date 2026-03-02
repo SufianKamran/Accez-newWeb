@@ -97,3 +97,13 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Chatbot widget fixes */
+#chat-input {
+  color: #000 !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+#chat-input::-webkit-scrollbar {
+  display: none !important;
+}
