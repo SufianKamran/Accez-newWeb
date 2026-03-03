@@ -87,6 +87,50 @@ export default function RootLayout({
                     document.body.appendChild(ns);
                   });
                 });
+
+              window.__accezSubmitLead = function(data) {
+                var iframe = document.createElement("iframe");
+                iframe.name = "sf-lead-iframe";
+                iframe.style.display = "none";
+                document.body.appendChild(iframe);
+
+                var form = document.createElement("form");
+                form.method = "POST";
+                form.action = "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D41000002kA0p";
+                form.target = "sf-lead-iframe";
+
+                var fields = {
+                  oid: "00D41000002kA0p",
+                  retURL: "https://accez.cloud/thankyou",
+                  recordType: "012Pm000004jdap",
+                  lead_source: "Chatbot",
+                  first_name: data.first_name || "",
+                  last_name: data.last_name || "",
+                  email: data.email || "",
+                  company: data.company || "",
+                  mobile: data.mobile || "",
+                  city: data.city || "",
+                  description: data.description || ""
+                };
+
+                Object.keys(fields).forEach(function(key) {
+                  var input = document.createElement("input");
+                  input.type = "hidden";
+                  input.name = key;
+                  input.value = fields[key];
+                  form.appendChild(input);
+                });
+
+                document.body.appendChild(form);
+                form.submit();
+
+                iframe.addEventListener("load", function() {
+                  setTimeout(function() {
+                    if (form.parentNode) form.parentNode.removeChild(form);
+                    if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+                  }, 2000);
+                });
+              };
             `,
           }}
         />
