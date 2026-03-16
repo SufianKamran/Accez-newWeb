@@ -34,11 +34,20 @@ export const metadata: Metadata = {
     siteName: 'Accez Cloud',
     url: 'https://accez.cloud',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://accez.cloud/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Accez Cloud - Smart Property Management Platform',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Accez | Smart Property Management Platform',
     description: 'Accez Cloud - Smart property management with 400+ channel integrations and automated operations.',
+    images: ['https://accez.cloud/images/og-image.png'],
   },
   robots: {
     index: true,
